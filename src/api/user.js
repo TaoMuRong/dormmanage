@@ -16,9 +16,9 @@ export function login(data) {
 //   })
 // }
 
-// export function logout() {
-//   return request({
-//     url: '/dorm/loginout',
-//     method: 'get'
-//   })
-// }
+export function logout() {
+  return request({
+    url: '/loginout',
+    method: 'get'
+  })
+}

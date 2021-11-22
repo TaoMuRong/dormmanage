@@ -14,10 +14,10 @@ service.interceptors.request.use(
   config => {
     // 发送请求前
 
-    // if (store.getters.token) {
-    //   // 让每个请求带token
-    //   config.headers['Authorization'] = getToken()
-    // }
+    if (store.getters.token) {
+      // 让每个请求带token
+      config.headers['token'] = getToken()
+    }
     return config
   },
   error => {

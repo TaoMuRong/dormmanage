@@ -56,6 +56,7 @@ const actions = {
         } = response
         commit('SET_TOKEN', data.token)
         setToken(data.token)
+        window.localStorage.setItem("loginData",JSON.stringify(data))
         resolve()
       }).catch(error => {
         reject(error)
@@ -92,24 +93,24 @@ const actions = {
   //   })
   // },
 
-  // // user logout
-  // logout({
-  //   commit,
-  //   state
-  // }) {
-  //   return new Promise((resolve, reject) => {
-  //     logout(state.token).then(() => {
-  //       removeToken() // must remove  token  first
-  //       resetRouter()
-  //       commit('RESET_STATE')
-  //       resolve()
-  //     }).catch(error => {
-  //       reject(error)
-  //     })
-  //   })
-  // },
+  // 用户登出
+  logout({
+    commit,
+    state
+  }) {
+    return new Promise((resolve, reject) => {
+      logout(state.token).then(() => {
+        removeToken() // 移出令牌
+        resetRouter()// 重置路由
+        commit('RESET_STATE')
+        resolve()
+      }).catch(error => {
+        reject(error)
+      })
+    })
+  },
 
-  // remove token
+  // 直接移出token不用请求后端接口
   resetToken({
     commit
   }) {
