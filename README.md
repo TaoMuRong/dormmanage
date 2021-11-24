@@ -1,4 +1,4 @@
-# vue-admin-template
+# 宿舍疫情管理系统
 
 > 这是一个极简的 vue admin 管理后台。使用了 Element UI & axios & iconfont & permission control & lint，这些搭建后台必要的东西。
 
@@ -14,7 +14,7 @@
 
 ```bash
 # 克隆项目
-git clone https://github.com/PanJiaChen/vue-admin-template.git
+git clone https://gitee.com/taomurong/dormmanage.git
 
 # 进入项目目录
 cd vue-admin-template
@@ -30,6 +30,8 @@ npm run dev
 ```
 
 浏览器访问 [http://localhost:9528](http://localhost:9528)
+
+服务器端口是：5189
 
 ## 发布
 
@@ -57,7 +59,4 @@ npm run lint
 npm run lint -- --fix
 ```
 
-## License
-
-[MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
 

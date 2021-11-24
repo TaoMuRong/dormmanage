@@ -80,6 +80,7 @@ export const constantRoutes = [{
 
 ]
 const createRouter = () => new Router({
+  mode: 'hash',
   scrollBehavior: () => ({
     y: 0
   }),

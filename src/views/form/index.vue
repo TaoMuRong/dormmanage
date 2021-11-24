@@ -58,26 +58,36 @@ export default {
         bodyTem: this.form.bodyTem,
         location: this.form.location,
       });
+
       this.$refs["form"].validate((valid) => {
         if (valid) {
           this.loading = true;
           this.$axios({
-            url: "/students/checkin",
+            url: "/api/dorm/students/checkin",
             method: "post",
+            headers: { "Content-Type": "application/json;charset=UTF-8" },
             data: param,
           })
-            .then(() => {
+            .then((res) => {
               this.loading = false;
+              //console.log(res);
+              var responseCode = res.data.code;
+              if (responseCode == 205) {
+                this.$message.error("今日已打卡，无需重复打卡！");
+              } else if (responseCode == 200) {
+                this.$message.success("打卡成功!");
+              }
             })
-            .catch(() => {
+            .catch((res) => {
               this.loading = false;
+              console.log(res);
+              this.$message.error("网络不好，请稍等！");
             });
         } else {
           console.log("提交错误!!");
           return false;
         }
       });
-      this.$message("提交成功!");
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();

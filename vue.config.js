@@ -9,10 +9,11 @@ function resolve(dir) {
 const name = defaultSettings.title || '宿舍疫情打卡' // 标题
 
 
-const port = process.env.port || process.env.npm_config_port || 9528 // dev port
+const port = process.env.port || process.env.npm_config_port || 9528 // 开发环境端口
+// const port = 9528 //生产环境端口
 
 module.exports = {
-  publicPath: '/',
+  publicPath: './',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
@@ -27,7 +28,8 @@ module.exports = {
     },
     proxy: {
       '/api': {
-        target: 'http://118.190.39.221:5188',
+        // target: 'http://118.190.39.221:5188',
+        target: 'http://localhost:5188',
         //ws: true,
         changeOrigin: true,
         pathRewrite: {
