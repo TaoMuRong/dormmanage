@@ -28,8 +28,8 @@ module.exports = {
     },
     proxy: {
       '/api': {
-        // target: 'http://118.190.39.221:5188',
-        target: 'http://localhost:5188',
+        target: 'http://118.190.39.221:5188',
+        // target: 'http://localhost:5188',
         //ws: true,
         changeOrigin: true,
         pathRewrite: {
