@@ -17,7 +17,7 @@
 git clone https://gitee.com/taomurong/dormmanage.git
 
 # 进入项目目录
-cd vue-admin-template
+cd dormmanage
 
 # 安装依赖
 npm install
@@ -29,9 +29,7 @@ npm install --registry=https://registry.npm.taobao.org
 npm run dev
 ```
 
-浏览器访问 [http://localhost:9528](http://localhost:9528)
-
-服务器端口是：5189
+浏览器访问 [http://localhost:9528
 
 ## 发布
 
@@ -58,5 +56,4 @@ npm run lint
 # 代码格式检查并自动修复
 npm run lint -- --fix
 ```
-
 
